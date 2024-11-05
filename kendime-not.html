@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijitale İz Bırak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #f0f0f0; 
+            margin: 0; 
+            padding: 20px; 
+            font-size: 30px;
+        }
+        .not-container {
+            margin: 20px auto; 
+            padding: 40px; 
+            background-color: #ffffff; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            max-width: 600px; 
+        }
+        h3 {
+            margin-bottom: 30px; 
+            font-size: 20px;
+        }
+        textarea {
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            margin-bottom: 10px; 
+            resize: none; 
+            font-size: 20px;
+        }
+        button {
+            background-color: #e8b952; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+        button:hover {
+            background-color: #d69a2f; 
+        }
+        .not-item {
+            padding: 10px; 
+            border-bottom: 1px solid #ccc; 
+            margin-bottom: 15px; 
+            background-color: #f9f9f9; 
+            border-radius: 5px; 
+        }
+        .not-item:last-child {
+            border-bottom: none; 
+        }
+        ul {
+            list-style-type: disc; 
+            padding-left: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="not-container">
+        <h3>Dijitale iz bırak</h3>
+        <textarea id="notInput" placeholder="Buraya notunuzu yazınız..." rows="4"></textarea>
+        <button id="addNotButton">Not Ekle</button>
+        <ul id="notList"></ul> 
+
+    <script>
+        const notlar = []; 
+
+        document.getElementById("addNotButton").onclick = function() {
+            const notInput = document.getElementById("notInput");
+            const not = notInput.value.trim(); 
+
+            if (not) { 
+                notlar.push(not); 
+                notInput.value = ''; 
+                displayNotlar(); 
+            } else {
+                alert("Not boş olamaz!"); 
+            }
+        };
+
+        function displayNotlar() {
+            const notList = document.getElementById("notList");
+            notList.innerHTML = ''; 
+            notlar.forEach((not) => {
+                const notItem = document.createElement("li"); 
+                notItem.className = 'not-item'; 
+                notItem.textContent = not; 
+                notList.appendChild(notItem); 
+            });
+        }
+    </script>
+</body>
+</html>

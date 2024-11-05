@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="TR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e7e7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .submit-button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Anket</h2>
+        <form>
+            <p>1. Hangi digital medya platforlarını en çok kullanıyorsunuz?</p>
+            <label><input type="radio" name="platform" value="Facebook" required> Facebook</label><br>
+            <label><input type="radio" name="platform" value="Instagram"> Instagram</label><br>
+            <label><input type="radio" name="platform" value="Youtube"> Youtube</label><br>
+            <label><input type="radio" name="platform" value="Tiktok"> Tiktok</label><br>
+            <label><input type="radio" name="platform" value="Diğer"> Diğer</label><br><br>
+
+            <p>2. Günlük olarak digital medya platforlarında ne kadar zaman harcıyorsunuz?</p>
+            <label><input type="radio" name="zaman" value="1 saatten az" required> 1 saatten az</label><br>
+            <label><input type="radio" name="zaman" value="1-3 saat"> 1-3 saat</label><br>
+            <label><input type="radio" name="zaman" value="3-5 saat"> 3-5 saat</label><br>
+            <label><input type="radio" name="zaman" value="5 saatten fazla"> 5 saatten fazla</label><br><br>
+
+            <p>3. Digital medya kullanımınızın ruh halinizi etkilediğini düşünüyor musunuz?</p>
+            <label><input type="radio" name="etki" value="Evet" required> Evet</label><br>
+            <label><input type="radio" name="etki" value="Hayır"> Hayır</label><br><br>
+
+            <button type="submit" class="submit-button">Gönder</button>
+        </form>
+    </div>
+</body>
+</html>

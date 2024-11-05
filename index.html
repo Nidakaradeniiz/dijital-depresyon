@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital depresyon</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="resim/senin hazinen111.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+      link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .resim {
+        width: 5%;
+      }
+
+      .nav-link {
+        color: #000;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #e8b952;
+      }
+
+      .nav-link.active {
+        color: #e8b952;
+      }
+
+      .section {
+        padding: 150px 0;
+        text-align: center;
+        margin: 0;
+        display: flex;
+      }
+
+      @media (max-width: 900px) {
+        .section {
+          display: grid;
+        }
+      }
+
+      .sectionBlue {
+        padding: 150px 0;
+        text-align: center;
+        margin: 0;
+      }
+
+      .bg-light {
+        background-color: #e7e8e8;
+      }
+
+      .bg-dark-blue {
+        background-color: #002244;
+        color: white;
+      }
+
+      .bg-orange {
+        background-color: #e8b952;
+        color: white;
+      }
+      .image-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
+      }
+      @media (max-width: 767px) {
+        .image-container {
+          display: grid !important;
+          margin-left: 85px;
+        }
+      }
+
+      .image-item {
+        flex: 1;
+        margin: 0 20px;
+        max-width: 300px;
+        position: relative;
+      }
+
+      .image-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .image-caption {
+        font-weight: bold;
+        color: #002244;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+      }
+
+      .image-description {
+        margin-top: 10px;
+        color: #002244;
+      }
+
+      .slogan {
+        font-size: 4rem;
+        font-weight: bolder;
+        color: #002244;
+        margin: 0;
+        line-height: 1.2;
+        text-align: left;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .slogan-container {
+        display: flex;
+        align-items: flex-start;
+        padding: 150px 0;
+        text-align: left;
+        margin: 0;
+      }
+
+      .image-section-title {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #002244;
+        margin-bottom: 100px;
+      }
+
+      .text-light {
+        color: #ffffff;
+        font-size: 1.5rem;
+        line-height: 2;
+      }
+
+      .btn-orange {
+        background-color: #e8b952;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 10px auto 0;
+      }
+
+      .btn-orange:hover {
+        background-color: #e8b952;
+      }
+
+      .turuncu-alan {
+        display: flex;
+        align-items: flex-start;
+        background-color: #e8b952;
+        color: white;
+        padding: 20px;
+      }
+
+      .turuncu-alan img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .turuncu-alan .text-container {
+        flex: 2;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      .turuncu-alan h2 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      .turuncu-alan ul {
+        padding-left: 20px;
+        list-style-type: disc;
+        margin-top: 10px;
+      }
+
+      .turuncu-alan ul li {
+        color: rgb(10, 9, 9);
+        padding: 5px 0;
+        list-style-position: inside;
+      }
+
+      .kaynak {
+        display: flex;
+      }
+
+      @media (max-width: 767px) {
+        .kaynak {
+          display: grid !important;
+        }
+      }
+
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .buton {
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        background-color: #e8952b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .buton:hover {
+        background-color: rgb(129, 129, 170);
+      }
+      .form-container {
+        width: 400px;
+      }
+      .scroll-to-top {
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #e8952b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        transition: background-color 0.3s;
+      }
+
+      .scroll-to-top:hover {
+        background-color: rgb(129, 129, 170);
+      }
+    </style>
+  </head>
+  <button onclick="scrollToTop()" id="scrollToTopBtn" class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <body>
+    <nav class="navbar navbar-expand-lg text-uppercase p-3">
+      <img
+        class="navbar-brand resim text-light"
+        src="resim/senin hazinen111.png"
+      />
+
+      <button
+        class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-0 mx-lg-0">
+            <a class="nav-link py-3 px-0 px-lg-3" href="index.html">ANASAYFA</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-0">
+            <a class="nav-link py-3 px-0 px-lg-3" href="hakkımızda.html"
+              >HAKKIMIZDA</a
+            >
+          </li>
+          <li class="nav-item mx-0 mx-lg-0">
+            <a class="nav-link py-3 px-0 px-lg-3" href="dijitaldepresyon.html"
+              >DİJİTAL DEPRESYON</a
+            >
+          </li>
+          <li class="nav-item mx-0 mx-lg-0">
+            <a class="nav-link py-3 px-0 px-lg-3" href="kendime-not.html" target="_blank">
+              DİJİTALE İZ BIRAK
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="section bg-light"
+      style="align-items: center; padding: 50px 20px"
+    >
+      <div
+        class="slogan-container"
+        style="text-align: left; padding-right: 20px; flex: 1"
+      >
+        <h2
+          class="slogan"
+          style="line-height: 1.2; font-weight: bold; color: #002244"
+        >
+          DİGİTAL DÜNYADAN<br />
+          GERÇEK HAYATA:<br />
+          KENDİNİ KEŞFET!<br />
+        </h2>
+      </div>
+      <div style="flex: 1; text-align: center">
+        <video
+          width="100%"
+          controls
+          autoplay
+          loop
+          muted
+          style="max-width: 800px"
+        >
+          <source
+            src="resim/istockphoto-1182427376-640_adpp_is.mp4"
+            type="video/mp4"
+            class="w-100"
+          />
+        </video>
+      </div>
+    </div>
+
+    <div class="sectionBlue bg-dark-blue text-center">
+      <h2 class="image-section-title" style="color: white">
+        DİJİTAL DEPRESYON NEDİR?
+      </h2>
+      <p class="text-light">
+        <span
+          >Dijital depresyon, dijital medya ve teknolojinin aşırı kullanımının
+          yol açtığı ruh hali bozukluğudur.</span
+        ><br />
+        <span
+          >Belirtileri arasında düşük enerji, ilgi kaybı, sosyal izolasyon ve
+          anksiyete yer alır.</span
+        ><br />
+        <span
+          >Ayrıca, uyku problemleri ve dikkat dağınıklığı da sıkça
+          görülür.</span
+        ><br />
+        <span
+          >Bu durum, bireylerin ruh sağlığını olumsuz etkileyebilir ve
+          profesyonel destek gerektirebilir.</span
+        >
+      </p>
+    </div>
+
+    <div class="section bg-light">
+      <div class="container">
+        <h2 class="image-section-title">BİZ NE YAPABİLİRİZ?</h2>
+        <div class="image-container">
+          <div class="image-item">
+            <div class="image-caption">Yönetim stratejileri</div>
+            <img src="resim/istockphoto-1245176242-612x612.jpg" alt="Resim 1" />
+            <div class="image-description">
+              Digital detoks, zaman sınırlaması, fiziksel aktivite, profesyonel
+              yardım alma
+            </div>
+          </div>
+          <div class="image-item">
+            <div class="image-caption">Yapılacak projeler</div>
+            <img src="resim/services-22.jpg" alt="Resim 2" />
+            <div class="image-description">
+              Eğitim ve biliçlendirme programları, destek grupları, danışmanlık
+              hizmetleri
+            </div>
+          </div>
+          <div class="image-item">
+            <div class="image-caption">İşbirlikleri</div>
+            <img
+              src="resim/depositphotos_176435968-stock-photo-businessmen-working-together.jpg"
+              alt="Resim 3"
+            />
+            <div class="image-description">Bakanlıklar, STK, Dernekler</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section bg-dark-blue">
+      <div class="container kaynak">
+        <div class="col-md-6">
+          <img
+            src="resim/pexels-pixabay-265667.jpg"
+            alt="Kaynaklar Resmi"
+            style="max-width: 500px; height: auto"
+            class="w-100"
+          />
+        </div>
+        <div class="col-md-6 text-content">
+          <h2>Kaynaklar</h2>
+          <p>Makaleler, araştırmalar, e-kitaplar</p>
+          <a href="yeni-sayfa.html" class="btn btn-orange" target="_blank"
+            >Daha Fazlası için</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <section class="turuncu-alan">
+      <div class="container p-5 kaynak">
+        <div class="col-md-6 p-5">
+          <h2>Kendine yardım</h2>
+          <ul>
+            <li>Günlük tutma</li>
+            <li>Meditasyon ve yoga</li>
+            <li>Ekran süresi yönetimi</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div style="flex: 1; padding-right: 20px">
+            <img
+              src="https://www.kemalarikan.com/wp-content/uploads/2020/01/metta-meditasyon-ve-kronik-depresyon.jpg"
+              alt="Turuncu Alan Resmi"
+              class="w-100"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="
+        background-color: rgba(0, 34, 68, 1);
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        display: flex;
+      "
+    >
+      <div class="sectionBlue bg-dark-blue">
+        <h2 style="text-align: left; color: white; margin-top: 0">İletişim</h2>
+        <div class="form-container" style="max-width: 400px; margin-top: 10px">
+          <form>
+            <label for="ad" style="color: rgba(255, 255, 255, 0.8)">Ad:</label
+            ><br />
+            <input
+              type="text"
+              id="ad"
+              name="ad"
+              required
+              style="
+                background-color: rgba(255, 255, 255, 0.3);
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+              "
+            /><br /><br />
+
+            <label for="soyad" style="color: rgba(255, 255, 255, 0.8)"
+              >Soyad:</label
+            ><br />
+            <input
+              type="text"
+              id="soyad"
+              name="soyad"
+              required
+              style="
+                background-color: rgba(255, 255, 255, 0.3);
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+              "
+            /><br /><br />
+
+            <label for="cinsiyet" style="color: rgba(255, 255, 255, 0.8)"
+              >Cinsiyet:</label
+            ><br />
+            <select
+              id="cinsiyet"
+              name="cinsiyet"
+              required
+              style="
+                background-color: rgba(255, 255, 255, 0.3);
+                color: rgb(5, 5, 5);
+                border: none;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+              "
+            >
+              <option
+                style="background-color: rgb(230, 240, 240)"
+                value="erkek"
+              >
+                Erkek
+              </option>
+              <option
+                style="background-color: rgb(245, 248, 248)"
+                value="kadin"
+              >
+                Kadın
+              </option>
+              <option
+                style="background-color: rgb(243, 247, 247)"
+                value="diger"
+              >
+                Diğer
+              </option></select
+            ><br /><br />
+
+            <label for="email" style="color: rgba(255, 255, 255, 0.8)"
+              >E-posta:</label
+            ><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              style="
+                background-color: rgba(255, 255, 255, 0.3);
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+              "
+            /><br /><br />
+
+            <label for="mesaj" style="color: rgba(255, 255, 255, 0.8)"
+              >Mesaj:</label
+            ><br />
+            <textarea
+              id="mesaj"
+              name="mesaj"
+              required
+              style="
+                background-color: rgba(255, 255, 255, 0.3);
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 5px;
+                width: 100%;
+                height: 100px;
+              "
+            ></textarea
+            ><br /><br />
+
+            <button
+              type="submit"
+              class="submit-button"
+              style="
+                background-color: orange;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+              "
+            >
+              Gönder
+            </button>
+          </form>
+        </div>
+
+        <button class="buton" onclick="window.open('anket.html', '_blank');">
+          Ankete katılmak ister misiniz?
+        </button>
+      </div>
+    </section>
+    <div
+      class="sectionBlue bg-dark-blue"
+      style="
+        background-color: rgba(0, 34, 68, 1);
+        padding: 40px 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+      "
+    >
+      <p style="margin: 10px 0; font-size: 1.2rem">
+        E-posta:
+        <a
+          href="mailto:digitaldepresyon@01.com"
+          style="color: rgba(255, 255, 255, 0.8); text-decoration: none"
+          >digitaldepresyon@01.com</a
+        >
+      </p>
+
+      <div style="margin: 10px 0">
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 1); margin: 0 10px"
+        >
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 1); margin: 0 10px"
+        >
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          style="color: rgba(255, 255, 255, 1); margin: 0 10px"
+        >
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+    <script>
+      window.onscroll = function () {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
